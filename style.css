@@ -1,0 +1,141 @@
+body {
+    background: rgba(120,120,120,.2);
+    font-family: "Courier New";
+}
+#wrapper {
+    width: 450px;
+    height: 450px;
+    margin: 0 auto;
+}
+#container {
+    width: 100%;
+    height: 700px;
+}
+input[name="start"], 
+input[name="stop"],
+input[name="reset"] {
+    display:none;
+}
+#controls {
+    width: 100%;
+    height: 100px;
+    clear: both;
+    display:block;
+    margin: 20px auto;
+    text-align:center;
+}
+#controls label {
+    font-size: 1.5em;
+    margin: 0px auto;
+    width: 50px;
+    height: 50px;
+    background: rgba(120, 120, 120, .5);
+    color: rgb(200,200,200);
+    line-height: 3em;
+    border: 25px rgba(120, 120, 120, 0) solid;
+    border-radius: 10%;
+}
+#outer-circle {
+    width: 91.1111%;
+    height: 91.111%;
+    margin: 0 auto;
+    border: 20px rgba(200, 200, 200, .5) solid;
+    border-radius: 100%;
+    position: relative;
+}
+#centerOuter {
+    position: inherit;
+    top: 50%;
+    left: 50%;
+    background: #abc;
+    width: 1px;
+    height: 1px; 
+}
+#inner-circle {
+    width: 10%;
+    height: 10%;
+    position: absolute;
+    top:40.5%;
+    left: 40.5%;
+    border: 20px rgba(200, 200, 200, .5) solid;
+    border-radius: 100%;    
+}
+#centerInner {
+    display: inline;
+    position: inherit;
+    top: 50%;
+    left: 50%;
+    background: #eae;
+    width: 1px;
+    height: 1px; 
+}
+#time {
+    font-size: 3em;
+    text-align:center;
+    background: rgb(200, 200, 200);
+}
+.running {
+    border: 20px rgba(20, 235, 20, .5) solid;
+    background: rgba(171, 205, 239, 0.5);
+    -webkit-transition: all .5s linear;
+    transition: all .5s linear;
+}
+.not-running {
+    background:none;
+    -webkit-transition: all .25s linear;
+    transition: all .25s linear;
+}
+.no-animation {
+    -webkit-animation: none;
+    animation: none;
+}
+.animation {
+    animation: orbit 60s steps(30) infinite;
+    -webkit-animation: orbit 60s steps(360) infinite;
+    animation-duration: 60s;
+    -webkit-animation-duration: 60s;
+}
+#second-hand {
+    position: relative;
+    top:50%;
+    left: 25%;
+    height: 205px;
+    width: 0px;
+    border: 10px rgba(255, 255, 255, .7) solid;
+    border-radius: 10px;
+    
+    -webkit-transition: all .1s linear;
+    transition: all .1s linear;
+    
+    -webkit-transform: rotate(180deg);
+    -webkit-transform-origin:top;
+    transform: rotate(180deg);
+    transform-origin:top;
+    
+    animation-play-state:paused;
+    -webkit-animation-play-state:paused;
+}
+
+@-webkit-keyframes orbit {
+    0% {
+        -webkit-transform: rotate(180deg);
+        -webkit-transform-origin:top;
+        transform: rotate(180deg);
+        transform-origin:top;
+    }
+    
+    50% {
+        -webkit-transform: rotate(360deg);
+        -webkit-transform-origin:top;
+        transform: rotate(360deg);
+        transform-origin:top;
+    }
+    
+    100% {
+        -webkit-transform: rotate(540deg);
+        -webkit-transform-origin:top;
+        transform: rotate(540deg);
+        transform-origin:top;
+    }
+}
+
