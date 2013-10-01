@@ -126,7 +126,7 @@ $(document).ready(function () {
         console.log($out + "\n"); */
         return $out;
     };
-<<<<<<< HEAD
+
     
     /**
      * Function to check the window size and
@@ -148,8 +148,6 @@ $(document).ready(function () {
         }
     })
     
-=======
->>>>>>> origin/master
 });
 
 
