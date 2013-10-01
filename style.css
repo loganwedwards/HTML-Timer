@@ -1,0 +1,167 @@
+@font-face {
+	font-family: 'Roboto-Thin';
+	font-style: normal;
+	src: url(assets/fonts/Roboto-Thin.ttf) format('truetype');
+}
+
+body {
+    background: rgba(120,120,120,.2);
+    font-family: "Roboto-Thin";
+}
+
+#container {
+    width: 100%;
+    height: 700px;
+}
+
+#wrapper {
+    width: 450px;
+    height: 450px;
+    margin: 0 auto;
+}
+
+#controls-wrapper {
+    width: 100%;
+    height: auto;
+    clear: both;
+    display:inline-block;
+    margin: 20px auto;
+    text-align:center;
+}
+#controls-wrapper .controls {
+    font-size: 2.0em;
+    font-weight:normal;
+    margin: 0px 10px;
+    display: inline-block;
+    width: 100px;
+    height: 50px;
+    background: rgba(120, 120, 120, .5);
+    color: rgb(255, 255, 255);
+    line-height: 1.5em;
+    padding: 10px;
+    border-radius: 10%;
+    box-shadow: 0px 2px 2px rgba(141, 141, 141, 0.34);
+}
+#controls-wrapper .controls:hover {
+    box-shadow: 0px 4px 4px rgba(141, 141, 141, 0.5);
+}
+
+#controls-wrapper .controls#start:hover {
+    background-color: rgba(176, 239, 171, 0.5);
+}
+
+#controls-wrapper .controls#stop:hover {
+    background-color: rgba(239, 171, 171, 0.5);
+}
+
+#controls-wrapper .controls#reset:hover {
+    background-color: rgba(171, 205, 239, 0.5);
+}
+
+#outer-circle {
+    width: 90%;
+    height: 90%;
+    margin: 0 auto;
+    border: 20px rgba(200, 200, 200, .5) solid;
+    border-radius: 100%;
+    position: relative;
+    box-shadow: 0px 2px 2px rgba(141, 141, 141, 0.34);
+}
+
+#inner-circle {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: calc(50% - 30px); /* Offset for border */
+    left: calc(50% - 30px); /* Offset for border */
+    border: 20px rgba(200, 200, 200, .5) solid;
+    border-radius: 100%;
+}
+
+#time {
+    font-size: 6em;
+    line-height: 0em;
+    text-align:center;
+}
+
+.running {
+    border: 20px rgba(20, 235, 20, .5) solid;
+    background: rgba(171, 205, 239, 0.5);
+    -webkit-transition: all .5s linear;
+    transition: all .5s linear;
+}
+
+.not-running {
+    background:none;
+    -webkit-transition: all .25s linear;
+    transition: all .25s linear;
+}
+
+.no-animation {
+    -webkit-animation: none;
+    animation: none;
+}
+
+.animation {
+    animation: orbit 60s steps(360) infinite;
+    -webkit-animation: orbit 60s steps(360) infinite;
+    animation-duration: 60s;
+    -webkit-animation-duration: 60s;
+}
+
+#second-hand {
+    position: absolute;
+    top: calc(50% + 0px);
+    left: calc(50% - 10px); /* Offset for border */
+    height: 200px;
+    width: 0px;
+    border: 10px rgba(255, 255, 255, .7) solid;
+    border-radius: 10px;
+    z-index: 1;
+    -webkit-transition: all .1s linear;
+    transition: all .1s linear;
+    box-shadow: 0px 2px 2px rgba(141, 141, 141, 0.34);
+    -webkit-transform: rotate(180deg);
+    -webkit-transform-origin:top;
+    transform: rotate(180deg);
+    transform-origin:top;
+    animation-play-state:paused;
+    -webkit-animation-play-state:paused;
+}
+
+@-webkit-keyframes orbit {
+    0% {
+        -webkit-transform: rotate(180deg);
+        -webkit-transform-origin:top;
+        transform: rotate(180deg);
+        transform-origin:top;
+    }
+    
+    50% {
+        -webkit-transform: rotate(360deg);
+        -webkit-transform-origin:top;
+        transform: rotate(360deg);
+        transform-origin:top;
+    }
+    
+    100% {
+        -webkit-transform: rotate(540deg);
+        -webkit-transform-origin:top;
+        transform: rotate(540deg);
+        transform-origin:top;
+    }
+}
+/* This takes care of allowing the application to be minimized somewhat */
+@media (max-width: 540px) {
+    #wrapper {
+        width: 87.5%; /* 400 * .875 = 350px */
+    }
+    #time {
+        font-size: 3em;
+    }
+    #controls-wrapper .controls {
+        width: 50px;
+        line-height: 3em;
+        font-size: 1em;
+    }
+}
