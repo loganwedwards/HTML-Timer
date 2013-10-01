@@ -11,4 +11,8 @@ chrome.app.runtime.onLaunched.addListener(function() {
       height: 800
     }
   });
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> origin/master
